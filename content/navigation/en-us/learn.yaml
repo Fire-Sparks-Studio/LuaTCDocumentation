@@ -1,0 +1,41 @@
+navigation:
+
+  - heading: Tutorials
+    section:
+      - title: Create Your First Addon
+        path: /tutorials/first-addon
+
+      - title: Create a Train
+        path: /tutorials/create-train
+
+      - title: Create a Tram
+        path: /tutorials/create-tram
+
+  - heading: Guides
+    section:
+      - title: Vehicles
+        path: /guides/vehicles/create
+
+      - title: Railway
+        path: /guides/railway/tracks
+
+      - title: Signaling
+        path: /guides/signaling/overview
+
+  - heading: APIs & Tools
+    section:
+      - title: Engine Reference
+        path: /api/overview
+
+      - title: LuaTC Reference
+        path: /luatc/overview
+
+  - heading: Examples
+    section:
+      - title: Hello World
+        path: /examples/hello-world
+
+  - heading: Release Notes
+    section:
+      - title: Latest Releases
+        path: /release-notes/stable
