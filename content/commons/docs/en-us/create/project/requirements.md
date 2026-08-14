@@ -39,7 +39,7 @@ The name of the addon directory is up to you. Choose a clear and descriptive nam
 
 </Alert>
 
-## `main.luatc`
+## main.luatc
 
 Every TransitCore addon requires a `main.luatc` file.
 
