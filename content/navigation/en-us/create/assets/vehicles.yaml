@@ -1,0 +1,15 @@
+order: 1
+title: "Vehicles"
+
+items:
+  - title: "Overview"
+    path: "/create/assets/vehicles/overview"
+
+  - title: "Structure"
+    path: "/create/assets/vehicles/structure"
+
+  - title: "Models"
+    path: "/create/assets/vehicles/models"
+
+  - title: "Configuration"
+    path: "/create/assets/vehicles/configuration"

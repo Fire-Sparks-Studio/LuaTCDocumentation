@@ -1,41 +1,41 @@
-navigation:
+title: Learn
 
-  - heading: Tutorials
-    section:
-      - title: Create Your First Addon
-        path: /tutorials/first-addon
+categories:
+  - title: Create
+    description: Create and configure content for TransitCore.
+    items:
+      - title: Project
+        path: /create/project
 
-      - title: Create a Train
-        path: /tutorials/create-train
+      - title: Assets
+        path: /create/assets
 
-      - title: Create a Tram
-        path: /tutorials/create-tram
+  - title: APIs & Tools
+    description: Explore LuaTC and the TransitCore Engine API.
+    items:
+      - title: LuaTC
+        path: /apis-and-tools/luatc
 
-  - heading: Guides
-    section:
-      - title: Vehicles
-        path: /guides/vehicles/create
+      - title: Engine API
+        path: /apis-and-tools/engine-api
 
-      - title: Railway
-        path: /guides/railway/tracks
+  - title: New to TransitCore?
+    description: Get started with TransitCore through guided documentation and tutorials.
+    items:
+      - title: Get Started
+        path: /new-to-transitcore/get-started
 
-      - title: Signaling
-        path: /guides/signaling/overview
+      - title: Tutorials
+        path: /new-to-transitcore/tutorials
 
-  - heading: APIs & Tools
-    section:
-      - title: Engine Reference
-        path: /api/overview
+  - title: Community
+    description: Learn about TransitCore releases, migration, and community guidelines.
+    items:
+      - title: Migration Guides
+        path: /community/migration-guides
 
-      - title: LuaTC Reference
-        path: /luatc/overview
+      - title: Release Notes
+        path: /community/release-notes
 
-  - heading: Examples
-    section:
-      - title: Hello World
-        path: /examples/hello-world
-
-  - heading: Release Notes
-    section:
-      - title: Latest Releases
-        path: /release-notes/stable
+      - title: Guidelines & Policies
+        path: /community/guidelines-and-policies

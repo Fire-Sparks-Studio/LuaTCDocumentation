@@ -1,0 +1,18 @@
+order: 4
+title: "Electrification"
+
+items:
+  - title: "Overview"
+    path: "/create/assets/electrification/overview"
+
+  - title: "Structure"
+    path: "/create/assets/electrification/structure"
+
+  - title: "Power"
+    path: "/create/assets/electrification/power"
+
+  - title: "Catenary"
+    path: "/create/assets/electrification/catenary"
+
+  - title: "Configuration"
+    path: "/create/assets/electrification/configuration"

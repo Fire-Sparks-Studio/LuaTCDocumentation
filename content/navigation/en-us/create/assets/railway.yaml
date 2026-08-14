@@ -1,0 +1,15 @@
+order: 2
+title: "Railway"
+
+items:
+  - title: "Overview"
+    path: "/create/assets/railway/overview"
+
+  - title: "Structure"
+    path: "/create/assets/railway/structure"
+
+  - title: "Track"
+    path: "/create/assets/railway/track"
+
+  - title: "Configuration"
+    path: "/create/assets/railway/configuration"

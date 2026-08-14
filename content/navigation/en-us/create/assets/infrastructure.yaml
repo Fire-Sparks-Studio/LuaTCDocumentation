@@ -1,0 +1,15 @@
+order: 5
+title: "Infrastructure"
+
+items:
+  - title: "Overview"
+    path: "/create/assets/infrastructure/overview"
+
+  - title: "Poles"
+    path: "/create/assets/infrastructure/poles"
+
+  - title: "Platforms"
+    path: "/create/assets/infrastructure/platforms"
+
+  - title: "Supports"
+    path: "/create/assets/infrastructure/supports"

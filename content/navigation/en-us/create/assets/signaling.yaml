@@ -1,0 +1,15 @@
+order: 3
+title: "Signaling"
+
+items:
+  - title: "Overview"
+    path: "/create/assets/signaling/overview"
+
+  - title: "Structure"
+    path: "/create/assets/signaling/structure"
+
+  - title: "Signal Configuration"
+    path: "/create/assets/signaling/configuration"
+
+  - title: "Signal States"
+    path: "/create/assets/signaling/states"

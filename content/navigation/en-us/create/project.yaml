@@ -1,0 +1,19 @@
+order: 1
+title: "Project"
+
+
+items:
+  - title: "Overview"
+    path: "/create/project/overview"
+
+  - title: "Project Structure"
+    path: "/create/project/structure"
+
+  - title: "Create"
+    path: "/create/project/create"
+
+  - title: "main.luatc"
+    path: "/create/project/main-luatc"
+
+  - title: "Configuration"
+    path: "/create/project/configuration"

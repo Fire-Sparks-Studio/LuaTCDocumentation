@@ -1,0 +1,9 @@
+order: 3
+title: "Create a Signal"
+
+items:
+  - title: "Introduction"
+    path: "/new-to-transitcore/tutorials/create-a-signal/introduction"
+
+  - title: "Requirements"
+    path: "/new-to-transitcore/tutorials/create-a-signal/requirements"

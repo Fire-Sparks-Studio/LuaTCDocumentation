@@ -1,0 +1,75 @@
+order: 1
+title: "Create a Vehicle"
+
+categories:
+  - title: "Overview"
+    items:
+      - title: "Introduction"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/introduction"
+
+      - title: "Requirements"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/requirements"
+
+  - title: "Vehicle"
+    items:
+      - title: "Definition"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/definition"
+
+      - title: "Properties"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/properties"
+
+      - title: "Configuration"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/configuration"
+
+  - title: "Model"
+    items:
+      - title: "Body"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/body"
+
+      - title: "Cab"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/cab"
+
+      - title: "Bogies"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/bogies"
+
+      - title: "Couplers"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/couplers"
+
+  - title: "Systems"
+    items:
+      - title: "Doors"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/doors"
+
+      - title: "Pantograph"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/pantograph"
+
+      - title: "Lights"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/lights"
+
+      - title: "Sounds"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/sounds"
+
+      - title: "Animations"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/animations"
+
+  - title: "Physics"
+    items:
+      - title: "Mass"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/mass"
+
+      - title: "Traction"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/traction"
+
+      - title: "Braking"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/braking"
+
+      - title: "Power"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/power"
+
+  - title: "Registration"
+    items:
+      - title: "Registering the Vehicle"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/registration"
+
+      - title: "Testing"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/testing"
