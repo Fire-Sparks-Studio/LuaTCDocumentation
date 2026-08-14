@@ -1,15 +1,38 @@
-order: 2
-title: "Railway"
+order: 1
+title: "VEHICLES"
 
-items:
+categories:
   - title: "Overview"
-    path: "/create/assets/railway/overview"
+    items:
+      - title: "Get Started"
+        path: "/create/assets/vehicles/get-started"
 
-  - title: "Structure"
-    path: "/create/assets/railway/structure"
+      - title: "Resources"
+        path: "/create/assets/vehicles/resources"
 
-  - title: "Track"
-    path: "/create/assets/railway/track"
+  - title: "Create"
+    items:
+      - title: "Create a Vehicle"
+        path: "/create/assets/vehicles/create"
+
+      - title: "Vehicle Structure"
+        path: "/create/assets/vehicles/structure"
 
   - title: "Configuration"
-    path: "/create/assets/railway/configuration"
+    items:
+      - title: "Properties"
+        path: "/create/assets/vehicles/configuration/properties"
+
+      - title: "Physics"
+        path: "/create/assets/vehicles/configuration/physics"
+
+  - title: "Reference"
+    items:
+      - title: "Doors"
+        path: "/create/assets/vehicles/reference/doors"
+
+      - title: "Bogies"
+        path: "/create/assets/vehicles/reference/bogies"
+
+      - title: "Pantographs"
+        path: "/create/assets/vehicles/reference/pantographs"

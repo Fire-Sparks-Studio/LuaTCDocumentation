@@ -1,18 +1,12 @@
 order: 1
-title: "Get Started"
+title: "GET STARTED"
 
 items:
   - title: "Introduction"
     path: "/new-to-transitcore/get-started/introduction"
 
-  - title: "Installation"
-    path: "/new-to-transitcore/get-started/installation"
+  - title: "Requirements"
+    path: "/new-to-transitcore/get-started/requirements"
 
   - title: "Create"
     path: "/new-to-transitcore/get-started/create"
-
-  - title: "Project Structure"
-    path: "/new-to-transitcore/get-started/project-structure"
-
-  - title: "Next Steps"
-    path: "/new-to-transitcore/get-started/next-steps"

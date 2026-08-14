@@ -1,0 +1,23 @@
+order: 1
+title: "VEHICLES"
+
+categories:
+  - title: "Create a Vehicle"
+    items:
+      - title: "Overview"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/overview"
+
+      - title: "Vehicle"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/vehicle"
+
+      - title: "Model"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/model"
+
+      - title: "Systems"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/systems"
+
+      - title: "Physics"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/physics"
+
+      - title: "Registration"
+        path: "/new-to-transitcore/tutorials/create-a-vehicle/registration"

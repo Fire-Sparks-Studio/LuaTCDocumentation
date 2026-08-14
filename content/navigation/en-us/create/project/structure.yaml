@@ -1,0 +1,9 @@
+order: 2
+title: "STRUCTURE"
+
+items:
+  - title: "Project Structure"
+    path: "/create/project/structure"
+
+  - title: "Files & Directories"
+    path: "/create/project/files"

@@ -1,15 +1,24 @@
 order: 3
-title: "Signaling"
+title: "SIGNALING"
 
-items:
+categories:
   - title: "Overview"
-    path: "/create/assets/signaling/overview"
+    items:
+      - title: "Introduction"
+        path: "/create/assets/signaling/overview"
 
-  - title: "Structure"
-    path: "/create/assets/signaling/structure"
+      - title: "Resources"
+        path: "/create/assets/signaling/resources"
 
-  - title: "Signal Configuration"
-    path: "/create/assets/signaling/configuration"
+  - title: "Create"
+    items:
+      - title: "Create a Signal"
+        path: "/create/assets/signaling/create"
 
-  - title: "Signal States"
-    path: "/create/assets/signaling/states"
+  - title: "Reference"
+    items:
+      - title: "Signal Properties"
+        path: "/create/assets/signaling/reference/properties"
+
+      - title: "Signal States"
+        path: "/create/assets/signaling/reference/states"

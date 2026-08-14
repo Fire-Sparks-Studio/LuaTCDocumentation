@@ -1,21 +1,50 @@
-order: 2
-title: "Engine API"
+order: 1
+title: "ENGINE API"
 
-items:
-  - title: "Overview"
-    path: "/apis-and-tools/engine-api/overview"
+categories:
+  - title: "Core"
+    items:
+      - title: "Classes"
+        path: "/apis-and-tools/engine-api/classes"
 
-  - title: "Classes"
-    path: "/apis-and-tools/engine-api/classes"
+      - title: "Types"
+        path: "/apis-and-tools/engine-api/types"
+
+      - title: "Enums"
+        path: "/apis-and-tools/engine-api/enums"
+
+      - title: "Events"
+        path: "/apis-and-tools/engine-api/events"
 
   - title: "Services"
-    path: "/apis-and-tools/engine-api/services"
+    items:
+      - title: "VehicleService"
+        path: "/apis-and-tools/engine-api/services/vehicle-service"
 
-  - title: "Types"
-    path: "/apis-and-tools/engine-api/types"
+      - title: "RailwayService"
+        path: "/apis-and-tools/engine-api/services/railway-service"
 
-  - title: "Events"
-    path: "/apis-and-tools/engine-api/events"
+      - title: "SignalService"
+        path: "/apis-and-tools/engine-api/services/signal-service"
 
-  - title: "Enums"
-    path: "/apis-and-tools/engine-api/enums"
+      - title: "ElectrificationService"
+        path: "/apis-and-tools/engine-api/services/electrification-service"
+
+  - title: "World"
+    items:
+      - title: "WorldService"
+        path: "/apis-and-tools/engine-api/services/world-service"
+
+      - title: "WeatherService"
+        path: "/apis-and-tools/engine-api/services/weather-service"
+
+      - title: "TimeService"
+        path: "/apis-and-tools/engine-api/services/time-service"
+
+  - title: "Players & Addons"
+    items:
+      - title: "PlayerService"
+        path: "/apis-and-tools/engine-api/services/player-service"
+
+      - title: "AddonService"
+        path: "/apis-and-tools/engine-api/services/addon-service"

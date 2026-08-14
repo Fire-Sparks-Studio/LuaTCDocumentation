@@ -1,15 +1,35 @@
-order: 5
-title: "Infrastructure"
+order: 4
+title: "ELECTRIFICATION"
 
-items:
+categories:
   - title: "Overview"
-    path: "/create/assets/infrastructure/overview"
+    items:
+      - title: "Introduction"
+        path: "/create/assets/electrification/overview"
 
-  - title: "Poles"
-    path: "/create/assets/infrastructure/poles"
+      - title: "Resources"
+        path: "/create/assets/electrification/resources"
 
-  - title: "Platforms"
-    path: "/create/assets/infrastructure/platforms"
+  - title: "Create"
+    items:
+      - title: "Create an Electrification System"
+        path: "/create/assets/electrification/create"
 
-  - title: "Supports"
-    path: "/create/assets/infrastructure/supports"
+      - title: "Create a Catenary"
+        path: "/create/assets/electrification/catenary/create"
+
+  - title: "Configuration"
+    items:
+      - title: "Power Configuration"
+        path: "/create/assets/electrification/configuration/power"
+
+      - title: "Catenary Configuration"
+        path: "/create/assets/electrification/configuration/catenary"
+
+  - title: "Reference"
+    items:
+      - title: "Electrification Properties"
+        path: "/create/assets/electrification/reference/properties"
+
+      - title: "Catenary Properties"
+        path: "/create/assets/electrification/reference/catenary"

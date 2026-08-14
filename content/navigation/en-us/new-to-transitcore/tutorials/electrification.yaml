@@ -1,0 +1,8 @@
+order: 4
+title: "ELECTRIFICATION"
+
+categories:
+  - title: "Create an Electrification System"
+    items:
+      - title: "Overview"
+        path: "/new-to-transitcore/tutorials/create-an-electrification-system/overview"

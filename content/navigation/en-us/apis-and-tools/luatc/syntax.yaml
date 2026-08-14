@@ -1,0 +1,15 @@
+order: 2
+title: "SYNTAX"
+
+items:
+  - title: "Syntax Overview"
+    path: "/apis-and-tools/luatc/syntax"
+
+  - title: "Variables"
+    path: "/apis-and-tools/luatc/syntax/variables"
+
+  - title: "Functions"
+    path: "/apis-and-tools/luatc/syntax/functions"
+
+  - title: "Tables"
+    path: "/apis-and-tools/luatc/syntax/tables"

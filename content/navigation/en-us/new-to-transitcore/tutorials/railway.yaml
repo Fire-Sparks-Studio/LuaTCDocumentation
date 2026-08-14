@@ -1,0 +1,20 @@
+order: 2
+title: "RAILWAY"
+
+categories:
+  - title: "Create a Railway"
+    items:
+      - title: "Overview"
+        path: "/new-to-transitcore/tutorials/create-a-railway/overview"
+
+      - title: "Railway"
+        path: "/new-to-transitcore/tutorials/create-a-railway/railway"
+
+      - title: "Nodes"
+        path: "/new-to-transitcore/tutorials/create-a-railway/nodes"
+
+      - title: "Connections"
+        path: "/new-to-transitcore/tutorials/create-a-railway/connections"
+
+      - title: "Registration"
+        path: "/new-to-transitcore/tutorials/create-a-railway/registration"

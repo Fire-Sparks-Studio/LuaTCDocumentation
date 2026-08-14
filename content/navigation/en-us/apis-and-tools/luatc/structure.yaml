@@ -1,0 +1,12 @@
+order: 3
+title: "STRUCTURE"
+
+items:
+  - title: "Addon Structure"
+    path: "/apis-and-tools/luatc/structure/addon"
+
+  - title: "Files"
+    path: "/apis-and-tools/luatc/structure/files"
+
+  - title: "Modules"
+    path: "/apis-and-tools/luatc/structure/modules"
