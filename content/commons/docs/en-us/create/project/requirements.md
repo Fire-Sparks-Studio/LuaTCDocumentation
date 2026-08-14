@@ -124,12 +124,13 @@ TransitCore does not automatically load every LuaTC file present in your project
 Resources must be explicitly registered from `main.luatc`.
 
 For example:
-
+```luatc
     self:register(require("vehicles/tram.luatc"))
+```
 
 Multiple resources can be registered from the same entry point:
 
-```luatc
+```luatc title="test"
     self:register(require("vehicles/tram.luatc"))
     self:register(require("vehicles/metro.luatc"))
     self:register(require("railway/railway.luatc"))
