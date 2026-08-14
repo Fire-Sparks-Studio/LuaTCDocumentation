@@ -1,68 +1,152 @@
-# Project Overview
+# Project Requirements
 
-Welcome to the TransitCore project documentation.
+Before creating a TransitCore addon, make sure your project follows the basic requirements expected by TransitCore.
 
-A TransitCore project contains everything required to create, organize, and distribute an addon.
+A valid project needs a recognizable structure and an entry point from which its resources can be registered.
 
-Whether you are creating a single vehicle or a complete railway system, your addon starts with a project.
+## Addon Directory
 
-## Introduction
+TransitCore addons are stored inside the `TC_Addons` directory.
 
-Projects provide a consistent structure for your TransitCore content.
+A basic installation can look like this:
 
-They allow LuaTC files, models, textures, sounds, animations, and other resources to be organized together.
+    .minecraft/
+    └── TC_Addons/
+        └── MyAddon/
 
-A project can be extremely simple when you are just getting started.
+Each directory inside `TC_Addons` represents an independent addon project.
 
-For example, a minimal project could contain only an entry point.
+### Project Directory
+
+Each addon should have its own directory.
+
+For example:
+
+    TC_Addons/
+    ├── MyAddon/
+    ├── RailwayAddon/
+    └── MyVehicles/
+
+Keeping addons separated prevents resources from different projects from being mixed together.
+
+<Alert severity="info">
+
+The name of the addon directory is up to you. Choose a clear and descriptive name that identifies your project.
+
+</Alert>
+
+## `main.luatc`
+
+Every TransitCore addon requires a `main.luatc` file.
+
+This file acts as the entry point of the project.
+
+A minimal project should therefore contain at least:
 
     MyAddon/
     └── main.luatc
 
-As the addon becomes larger, additional directories and resources can be added.
+TransitCore uses this file to determine which resources belong to the addon.
+
+### Entry Point Location
+
+The `main.luatc` file must be located at the root of the addon.
+
+The following structure is valid:
+
+    MyAddon/
+    ├── main.luatc
+    └── vehicles/
+        └── tram.luatc
+
+The following structure is not valid:
+
+    MyAddon/
+    └── scripts/
+        └── main.luatc
+
+The entry point must remain directly inside the addon directory.
+
+<Alert severity="warning">
+
+Do not move `main.luatc` into another directory. TransitCore expects the addon entry point at the root of the project.
+
+</Alert>
+
+## LuaTC Files
+
+Project resources are defined using LuaTC.
+
+LuaTC files should use the `.luatc` extension.
+
+For example:
+
+    vehicles/
+    ├── tram.luatc
+    └── metro.luatc
+
+LuaTC is used to define and configure the resources provided by your addon.
+
+### File Organization
+
+LuaTC files should be organized according to the resources they define.
+
+For example:
 
     MyAddon/
     ├── main.luatc
     ├── vehicles/
-    ├── railway/
-    ├── signaling/
-    └── assets/
+    │   ├── tram.luatc
+    │   └── metro.luatc
+    └── railway/
+        └── railway.luatc
 
-The structure is designed to grow with your addon.
+This is not only useful for readability, but also makes larger projects easier to maintain.
 
-## What Is a Project?
+## Resource Registration
 
-A project is a collection of resources that belong to the same addon.
+TransitCore does not automatically load every LuaTC file present in your project.
 
-The project provides the environment in which your LuaTC code and assets are organized.
+Resources must be explicitly registered from `main.luatc`.
 
-Every addon should have a clear entry point and a predictable structure.
-
-This makes it easier to understand where resources are located and how they are connected.
-
-## The Main File
-
-Every TransitCore addon uses a `main.luatc` file as its entry point.
-
-This file is responsible for registering the resources that should be loaded by TransitCore.
-
-A simple entry point can look like this:
+For example:
 
     self:register(require("vehicles/tram.luatc"))
 
-Multiple resources can be registered from the same file.
+Multiple resources can be registered from the same entry point:
 
     self:register(require("vehicles/tram.luatc"))
     self:register(require("vehicles/metro.luatc"))
     self:register(require("railway/railway.luatc"))
 
-TransitCore does not simply execute every LuaTC file it finds.
+### Registration Paths
 
-Resources must be explicitly registered by the addon.
+The path passed to `require()` must point to the LuaTC resource you want to load.
+
+For example, if your project contains:
+
+    MyAddon/
+    ├── main.luatc
+    └── vehicles/
+        └── tram.luatc
+
+The resource can be registered with:
+
+    self:register(require("vehicles/tram.luatc"))
+
+<Alert severity="warning">
+
+A LuaTC file existing inside your project does not automatically make it part of the addon. If the resource needs to be loaded by TransitCore, it must be registered.
+
+</Alert>
 
 ## Project Structure
 
-A recommended project can be organized by resource type.
+There is no requirement for every addon to use the exact same directory structure.
+
+However, organizing resources by type is recommended for larger projects.
+
+A typical project can look like this:
 
     MyAddon/
     ├── main.luatc
@@ -73,96 +157,50 @@ A recommended project can be organized by resource type.
     ├── infrastructure/
     └── assets/
 
-Each directory has a specific purpose.
+### Vehicles
 
-This separation becomes increasingly useful as an addon grows.
-
-## Vehicles
-
-The `vehicles` directory contains vehicle definitions.
-
-This can include trams, metros, trains, locomotives, and other supported rolling stock.
+Vehicle definitions can be stored inside the `vehicles` directory.
 
     vehicles/
     ├── tram.luatc
-    ├── metro.luatc
-    └── train.luatc
+    └── metro.luatc
 
-For larger projects, vehicles can be grouped into additional directories.
+### Railway
 
-    vehicles/
-    ├── trams/
-    │   ├── citadis.luatc
-    │   └── urbos.luatc
-    └── metros/
-        ├── mpl75.luatc
-        └── mpl16.luatc
-
-## Railway
-
-The `railway` directory contains railway-related definitions.
-
-These resources can describe tracks, railway elements, switches, and other components.
+Railway-related definitions can be stored inside the `railway` directory.
 
     railway/
-    ├── railway.luatc
-    ├── tracks/
-    └── switches/
+    └── railway.luatc
 
-A railway system can contain many individual resources.
+### Signaling
 
-Keeping them separated makes the project easier to maintain.
-
-## Signaling
-
-The `signaling` directory contains signal definitions and related resources.
+Signal definitions and related resources can be organized inside the `signaling` directory.
 
     signaling/
-    ├── signals.luatc
-    ├── routes.luatc
-    └── controllers.luatc
+    └── signals.luatc
 
-Signals can interact with railway infrastructure and other TransitCore systems.
+### Electrification
 
-A large signaling system may contain many different signal types.
-
-Organizing them into separate files or directories can make the project easier to navigate.
-
-## Electrification
-
-Electrification resources define systems used to provide power to supported vehicles.
+Electrification resources can be organized inside the `electrification` directory.
 
     electrification/
-    ├── catenary.luatc
-    └── overhead.luatc
+    └── catenary.luatc
 
-These resources can be organized further when an addon contains multiple electrification systems.
+### Infrastructure
 
-## Infrastructure
-
-Infrastructure contains static elements used by the addon.
-
-Examples include poles, supports, platforms, signs, and other non-interactive or minimally interactive elements.
+Static infrastructure resources can be organized inside the `infrastructure` directory.
 
     infrastructure/
     ├── poles.luatc
-    ├── platforms.luatc
-    └── supports.luatc
-
-Infrastructure can also be divided into multiple directories.
-
-    infrastructure/
-    ├── poles/
-    ├── platforms/
-    └── signs/
-
-This becomes useful when an addon contains a large amount of infrastructure.
+    └── platforms.luatc
 
 ## Assets
 
-Projects can contain external assets used by LuaTC resources.
+Projects can contain assets required by their resources.
 
-Common asset types include models, textures, sounds, and animations.
+These can include models, textures, sounds, animations, and other supported resources.
+
+A project can organize them under an `assets` directory.
 
     assets/
     ├── models/
@@ -170,306 +208,35 @@ Common asset types include models, textures, sounds, and animations.
     ├── sounds/
     └── animations/
 
-Keeping assets separate from LuaTC definitions can make larger projects easier to manage.
+### Asset Organization
 
-## Models
-
-Models provide the visual geometry used by resources.
-
-They can be stored inside the project's asset directories.
-
-    assets/
-    └── models/
-        ├── tram.obj
-        ├── metro.obj
-        └── signal.obj
-
-A project may contain many different models.
-
-Using descriptive filenames makes it easier to identify them later.
-
-## Textures
-
-Textures provide the visual appearance of models.
-
-    assets/
-    └── textures/
-        ├── tram.png
-        ├── metro.png
-        └── signal.png
-
-Textures can be grouped by resource when necessary.
-
-    assets/
-    └── textures/
-        ├── vehicles/
-        │   ├── tram/
-        │   └── metro/
-        ├── railway/
-        └── signaling/
-
-## Sounds
-
-Sounds can be used by vehicles, signals, infrastructure, and other resources.
-
-A project might contain several types of sounds.
-
-    assets/
-    └── sounds/
-        ├── vehicles/
-        ├── signals/
-        └── environment/
-
-Keeping audio resources grouped by purpose makes them easier to locate.
-
-## Animations
-
-Animations can be used for moving components.
-
-Examples include doors, pantographs, couplers, control elements, and other animated parts.
-
-    assets/
-    └── animations/
-        ├── doors/
-        ├── pantographs/
-        └── controls/
-
-The exact organization can be adapted to the needs of the addon.
-
-## Naming Resources
-
-Consistent naming conventions are important for large projects.
-
-Prefer descriptive names such as `tram_tcl.luatc` or `metro_mpl75.luatc`.
-
-Avoid unclear names such as `test.luatc`, `thing.luatc`, or `new_file.luatc`.
-
-Good names make the project easier to understand.
-
-## Registration
-
-TransitCore does not automatically register every resource.
-
-Resources should be explicitly registered from the project's `main.luatc`.
+For larger addons, assets can be grouped according to the resources they belong to.
 
 For example:
 
-    self:register(require("vehicles/tram.luatc"))
-    self:register(require("vehicles/metro.luatc"))
-    self:register(require("railway/railway.luatc"))
-    self:register(require("signaling/signals.luatc"))
-
-This gives addon developers control over which resources are loaded.
-
-## Development
-
-During development, projects can contain experimental resources.
-
-These resources do not necessarily need to be included in the final addon.
-
-    development/
-    ├── test_vehicle.luatc
-    ├── test_signal.luatc
-    └── experimental.luatc
-
-Keeping development resources separate can be useful when working on complex projects.
-
-## Large Projects
-
-Large projects should use additional directories when necessary.
-
-Do not be afraid to create additional levels of organization.
-
-    vehicles/
-    ├── trams/
-    ├── metros/
-    ├── trains/
-    └── locomotives/
-
-The exact structure is up to the addon developer.
-
-There is no requirement for every addon to use the same internal organization.
-
-## Example Project
-
-Consider an addon containing a complete tram network.
-
-The project could contain the following structure:
-
-    TramNetwork/
-    ├── main.luatc
-    ├── vehicles/
-    │   └── tram.luatc
-    ├── railway/
-    │   └── tram_tracks.luatc
-    ├── signaling/
-    │   └── tram_signals.luatc
-    ├── electrification/
-    │   └── overhead.luatc
-    ├── infrastructure/
-    │   ├── poles.luatc
-    │   └── platforms.luatc
-    └── assets/
-        ├── models/
-        ├── textures/
-        ├── sounds/
-        └── animations/
-
-This structure clearly separates each major part of the addon.
-
-## Organizing Code
-
-LuaTC files should generally be kept close to the resources they define.
-
-For example, vehicle definitions can be stored inside the `vehicles` directory.
-
-    vehicles/
-    ├── tram.luatc
-    └── metro.luatc
-
-This makes it easier to locate the source code for a specific resource.
-
-## Organizing Assets
-
-Assets can be grouped according to their purpose or according to the resource they belong to.
-
-Both approaches can work.
-
-A resource-based structure might look like this:
-
     assets/
     └── vehicles/
-        ├── tram/
-        │   ├── model/
-        │   ├── textures/
-        │   └── sounds/
-        └── metro/
+        └── tram/
             ├── model/
             ├── textures/
             └── sounds/
 
-A type-based structure might instead look like this:
+Keeping assets organized becomes increasingly important as the project grows.
 
-    assets/
-    ├── models/
-    ├── textures/
-    └── sounds/
+## Recommended Requirements
 
-Choose the structure that makes the project easiest to understand.
+A TransitCore project should satisfy the following basic requirements:
 
-## Best Practices
+- The addon is located inside `TC_Addons`.
+- The addon has its own project directory.
+- A `main.luatc` file exists at the root of the project.
+- LuaTC resources use the `.luatc` extension.
+- Resources that need to be loaded are registered from `main.luatc`.
+- Resource paths used by `require()` correctly point to the intended files.
+- Project resources are organized in a clear and maintainable structure.
 
-Keep related files together.
+<Alert severity="success">
 
-Use descriptive names.
+A project does not need to contain every possible TransitCore resource. Start with only what your addon needs and expand the structure as your project grows.
 
-Avoid unnecessary duplication.
-
-Keep experimental files separate from production resources.
-
-Use `main.luatc` as the central registration point.
-
-Keep assets organized.
-
-Review your project structure regularly.
-
-## Common Mistakes
-
-One common mistake is putting every file directly inside the project root.
-
-Another common mistake is using inconsistent names.
-
-A third mistake is registering resources that are not required.
-
-These issues may not matter in a small project, but they become problematic as the addon grows.
-
-## Project Checklist
-
-Before considering a project ready, verify the following:
-
-- [ ] `main.luatc` exists.
-- [ ] Resources are correctly organized.
-- [ ] Files have descriptive names.
-- [ ] Required assets are present.
-- [ ] Unused resources are not registered.
-- [ ] Development files are separated.
-- [ ] The project is easy to understand.
-- [ ] Resource paths are correct.
-- [ ] Models and textures are correctly referenced.
-- [ ] The addon can be loaded successfully.
-
-## Maintaining a Project
-
-A project should remain understandable throughout its entire development lifecycle.
-
-As new features are added, take the time to place them in the appropriate directory.
-
-Avoid creating temporary structures that become permanent simply because the project has grown around them.
-
-Regular organization is much easier than reorganizing hundreds of files later.
-
-## Final Example
-
-A mature TransitCore project could eventually look like this:
-
-    MyTransitAddon/
-    ├── main.luatc
-    │
-    ├── vehicles/
-    │   ├── trams/
-    │   │   ├── citadis.luatc
-    │   │   └── urbos.luatc
-    │   └── metros/
-    │       ├── mpl75.luatc
-    │       └── mpl16.luatc
-    │
-    ├── railway/
-    │   ├── tracks/
-    │   ├── switches/
-    │   └── railway.luatc
-    │
-    ├── signaling/
-    │   ├── signals/
-    │   ├── routes/
-    │   └── signaling.luatc
-    │
-    ├── electrification/
-    │   ├── catenary/
-    │   └── electrification.luatc
-    │
-    ├── infrastructure/
-    │   ├── poles/
-    │   ├── platforms/
-    │   └── infrastructure.luatc
-    │
-    └── assets/
-        ├── models/
-        ├── textures/
-        ├── sounds/
-        └── animations/
-
-## Conclusion
-
-A good project structure should make your addon easier to understand.
-
-There is no single structure that works for every addon.
-
-Start simple.
-
-Add additional directories when they become useful.
-
-Keep related resources together.
-
-Use clear names.
-
-Keep the entry point organized.
-
-Most importantly, choose a structure that remains understandable as your project grows.
-
-## Next Steps
-
-Once you understand the basics of a TransitCore project, continue with the Structure documentation.
-
-The next section explains how the different files and directories of a TransitCore project fit together.
-
-From there, you can learn how `main.luatc` registers your resources and how LuaTC definitions are connected to the rest of your addon.
+</Alert>
