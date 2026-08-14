@@ -147,7 +147,7 @@ There is no requirement for every addon to use the exact same directory structur
 However, organizing resources by type is recommended for larger projects.
 
 A typical project can look like this:
-
+```
     MyAddon/
     ├── main.luatc
     ├── vehicles/
@@ -156,6 +156,7 @@ A typical project can look like this:
     ├── electrification/
     ├── infrastructure/
     └── assets/
+```
 
 ### Vehicles
 
