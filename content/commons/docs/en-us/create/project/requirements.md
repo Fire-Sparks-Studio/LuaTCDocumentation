@@ -10,9 +10,11 @@ TransitCore addons are stored inside the `TC_Addons` directory.
 
 A basic installation can look like this:
 
+```text
     .minecraft/
     └── TC_Addons/
         └── MyAddon/
+```
 
 Each directory inside `TC_Addons` represents an independent addon project.
 
@@ -22,10 +24,12 @@ Each addon should have its own directory.
 
 For example:
 
+```text
     TC_Addons/
     ├── MyAddon/
     ├── RailwayAddon/
     └── MyVehicles/
+```
 
 Keeping addons separated prevents resources from different projects from being mixed together.
 
@@ -43,8 +47,10 @@ This file acts as the entry point of the project.
 
 A minimal project should therefore contain at least:
 
+```text
     MyAddon/
     └── main.luatc
+```
 
 TransitCore uses this file to determine which resources belong to the addon.
 
@@ -54,16 +60,20 @@ The `main.luatc` file must be located at the root of the addon.
 
 The following structure is valid:
 
+```text
     MyAddon/
     ├── main.luatc
     └── vehicles/
         └── tram.luatc
+```
 
 The following structure is not valid:
 
+```text
     MyAddon/
     └── scripts/
         └── main.luatc
+```
 
 The entry point must remain directly inside the addon directory.
 
