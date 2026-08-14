@@ -81,9 +81,11 @@ LuaTC files should use the `.luatc` extension.
 
 For example:
 
+```text
     vehicles/
     ├── tram.luatc
     └── metro.luatc
+```
 
 LuaTC is used to define and configure the resources provided by your addon.
 
@@ -93,6 +95,7 @@ LuaTC files should be organized according to the resources they define.
 
 For example:
 
+```text
     MyAddon/
     ├── main.luatc
     ├── vehicles/
@@ -100,6 +103,7 @@ For example:
     │   └── metro.luatc
     └── railway/
         └── railway.luatc
+```
 
 This is not only useful for readability, but also makes larger projects easier to maintain.
 
@@ -115,20 +119,23 @@ For example:
 
 Multiple resources can be registered from the same entry point:
 
+```luatc
     self:register(require("vehicles/tram.luatc"))
     self:register(require("vehicles/metro.luatc"))
     self:register(require("railway/railway.luatc"))
+```
 
 ### Registration Paths
 
 The path passed to `require()` must point to the LuaTC resource you want to load.
 
 For example, if your project contains:
-
+```text
     MyAddon/
     ├── main.luatc
     └── vehicles/
         └── tram.luatc
+```
 
 The resource can be registered with:
 
@@ -147,7 +154,7 @@ There is no requirement for every addon to use the exact same directory structur
 However, organizing resources by type is recommended for larger projects.
 
 A typical project can look like this:
-
+```text
     MyAddon/
     ├── main.luatc
     ├── vehicles/
@@ -156,44 +163,54 @@ A typical project can look like this:
     ├── electrification/
     ├── infrastructure/
     └── assets/
+```
 
 
 ### Vehicles
 
 Vehicle definitions can be stored inside the `vehicles` directory.
-
+```text
     vehicles/
     ├── tram.luatc
     └── metro.luatc
+```
 
 ### Railway
 
 Railway-related definitions can be stored inside the `railway` directory.
 
+```text
     railway/
     └── railway.luatc
+```
 
 ### Signaling
 
 Signal definitions and related resources can be organized inside the `signaling` directory.
 
+```text
     signaling/
     └── signals.luatc
+```
 
 ### Electrification
 
 Electrification resources can be organized inside the `electrification` directory.
 
+```text
     electrification/
     └── catenary.luatc
+```
 
 ### Infrastructure
 
 Static infrastructure resources can be organized inside the `infrastructure` directory.
 
+```text
     infrastructure/
     ├── poles.luatc
     └── platforms.luatc
+```
 
 ## Assets
 
@@ -203,11 +220,13 @@ These can include models, textures, sounds, animations, and other supported reso
 
 A project can organize them under an `assets` directory.
 
+```text
     assets/
     ├── models/
     ├── textures/
     ├── sounds/
     └── animations/
+```
 
 ### Asset Organization
 
@@ -215,12 +234,14 @@ For larger addons, assets can be grouped according to the resources they belong 
 
 For example:
 
+```text
     assets/
     └── vehicles/
         └── tram/
             ├── model/
             ├── textures/
             └── sounds/
+```
 
 Keeping assets organized becomes increasingly important as the project grows.
 
